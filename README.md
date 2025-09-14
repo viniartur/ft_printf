@@ -1,53 +1,60 @@
-ft_printf
-This project is an implementation of the standard C library function, printf. The goal is to recreate the functionality of the original function with a limited number of format specifiers, focusing on understanding variadic functions and string manipulation.
+# `ft_printf`
 
-Features
-The ft_printf function supports the following format specifiers:
+### ** Recreating `printf` from scratch **
 
-%c Prints a single character.
+This project is a deep dive into the standard C library function `printf`, rebuilt from the ground up. It's an exploration of variadic functions and efficient string manipulation, focusing on replicating key functionalities for educational purposes.
 
-%s Prints a string.
+---
 
-%p Prints a pointer address in hexadecimal format.
+### ** Supported Features**
 
-%d or %i Prints a signed integer (base 10).
+Our `ft_printf` function handles the following format specifiers:
 
-%u Prints an unsigned integer.
+* **`%c`** Prints a single character.
+* **`%s`** Prints a string.
+* **`%p`** Prints a pointer address in hexadecimal format.
+* **`%d`** or **`%i`** Prints a signed integer (base 10).
+* **`%u`** Prints an unsigned integer.
+* **`%x`** Prints a number in hexadecimal format (lowercase).
+* **`%X`** Prints a number in hexadecimal format (uppercase).
+* **`%%`** Prints a percent sign.
 
-%x Prints a number in hexadecimal format (lowercase).
+---
 
-%X Prints a number in hexadecimal format (uppercase).
+### ** How to Use**
 
-%% Prints a percent sign.
+To get started, simply clone the repository and compile the library:
 
-How to Use
-To compile and use the library in your project, follow these steps:
+1.  Clone the project:
+    ```bash
+    git clone https://github.com/viniartur/ft_printf.git
+    ```
+2.  Navigate into the directory and run `make`:
+    ```bash
+    cd ft_printf
+    make
+    ```
+3.  Include the `ft_printf.h` header in your source code:
+    ```c
+    #include "ft_printf.h"
+    ```
+4.  Link the static library (`libftprintf.a`) when compiling your program:
+    ```bash
+    gcc main.c libftprintf.a -o my_program
+    ```
 
-Clone the repository:
+---
 
-git clone https://github.com/viniartur/ft_printf.git
-Navigate to the project directory and compile the library using the Makefile:
+### ** Example**
 
-cd ft_printf
-make
-Include the ft_printf.h header in your source code:
-
-C
-
-#include "ft_printf.h"
-Compile your main.c file with the static library libftprintf.a:
-
-gcc main.c libftprintf.a -o your_program
-Example of Use
-C
-
+```c
 #include "ft_printf.h"
 
 int main(void)
 {
-    ft_printf("Hello, World!\n");
-    ft_printf("My favorite number is %d and my name is %s.\n", 42, "Vini");
-    ft_printf("The address of a variable is %p.\n", &main);
-    ft_printf("Hexadecimal: %x\n", 255);
+    ft_printf("Hello, Coder! \n");
+    ft_printf("My name is %s and my number is %d.\n", "Vini", 42);
+    ft_printf("The address of this function is %p.\n", &main);
+    ft_printf("Hexadecimal: %x and %X.\n", 255, 255);
     return 0;
 }
